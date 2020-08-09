@@ -18,7 +18,7 @@ yarn start
 
 ## :star: Contribution
 
-All sort of contributions are website. Just [create a issue][repo] before working on something.
+All sort of contributions are welcome. Just [create a issue][repo] before working on something.
 
 Happy coding :tada:
 
