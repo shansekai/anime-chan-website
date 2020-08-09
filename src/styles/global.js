@@ -7,6 +7,11 @@ const GlobalStyles = createGlobalStyle`
         padding:0;
     }
 
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
     body,html{
         height: 100%;
         background: ${props => props.theme.colors.bg};
