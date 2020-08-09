@@ -9,10 +9,12 @@ git clone https://github.com/RocktimSaikia/anime-chan-website.git
 
 cd anime-chan-website
 
-npm install
+yarn install
 
-npm start
+yarn start
 ```
+
+> You can use `npm` too but yarn is recommended
 
 ## :star: Contribution
 
