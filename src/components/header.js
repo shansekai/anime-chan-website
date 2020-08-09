@@ -2,7 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => <header></header>
+const Header = ({ siteTitle }) => {
+  return <header></header>
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

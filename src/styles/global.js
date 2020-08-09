@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
 
     body,html{
         height: 100%;
-        background: ${props => props.theme.colors.bg}
+        background: ${props => props.theme.colors.bg};
     }
 `
 export default GlobalStyles

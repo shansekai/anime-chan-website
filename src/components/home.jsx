@@ -8,7 +8,10 @@ const Container = styled.div`
 `
 
 const HeroTitle = styled.h1`
-  color: ${props => props.theme.colors.lightBlack};
+  color: ${props => props.theme.colors.strongBlack};
+  font-family: ${props => props.theme.fonts.primary};
+  font-size: ${props => props.theme.fontSizes.heroTitle};
+  font-weight: 900;
   margin-bottom: 1.5em;
 `
 const HeroContent = styled.div`
@@ -18,10 +21,13 @@ const HeroContent = styled.div`
 `
 
 const HeroContentItem = styled.div`
+  font-family: ${props => props.theme.fonts.secondary};
+  font-size: ${props => props.theme.fontSizes.heroItem};
+  color: ${props => props.theme.colors.lightBlack};
+  font-weight: 700;
   display: flex;
   align-items: center;
   margin: 0 15px;
-  font-size: 16px;
   &::before {
     display: inline-block;
     content: "";
