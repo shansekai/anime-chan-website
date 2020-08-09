@@ -1,10 +1,11 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import GithubIcon from '../assets/github-outline.svg'
 
 const Container = styled.header`
-  background: ${props => props.theme.colors.lightRed};
+  background: ${(props) => props.theme.colors.lightRed};
   display: flex;
   padding: 15px;
 `
@@ -17,8 +18,8 @@ const RightNav = styled.ul`
 `
 
 const RightNavItem = styled.li`
-  color: ${props => props.theme.colors.lightBlack};
-  font-family: ${props => props.theme.fonts.secondary};
+  color: ${(props) => props.theme.colors.lightBlack};
+  font-family: ${(props) => props.theme.fonts.secondary};
   cursor: pointer;
   font-weight: 700;
   display: inline-block;
@@ -26,14 +27,18 @@ const RightNavItem = styled.li`
   padding: 5px 10px;
 
   &:nth-child(3) {
-    background: ${props => props.theme.colors.lightGreen};
+    background: ${(props) => props.theme.colors.lightGreen};
     border-radius: 5px;
   }
 `
 const Header = ({ siteTitle }) => {
   return (
     <Container>
-      <h5>animechan</h5>
+      <div>
+        <a href="https://www.github.com/rocktimsaikia/anime-chan" target="_blank" rel="noopener noreferrer">
+          <GithubIcon height="28px" />
+        </a>
+      </div>
       <RightNav>
         <RightNavItem>
           <Link to="/docs">Docs</Link>
