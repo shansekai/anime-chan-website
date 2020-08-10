@@ -6,9 +6,7 @@ import HeartIcon from '../assets/hand-holding-heart.svg'
 import CodeIcon from '../assets/code-outline.svg'
 
 const Container = styled.footer`
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+  margin-top: 50px;
   font-family: ${(props) => props.theme.fonts.secondary};
   color: ${(props) => props.theme.colors.lightBlack};
 `
