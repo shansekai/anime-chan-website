@@ -7,7 +7,11 @@ import GithubIcon from '../assets/github-outline.svg'
 const Container = styled.header`
   background: ${(props) => props.theme.colors.lightRed};
   display: flex;
-  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  height: ${(props) => props.theme.headerHeight};
+  padding: 0 ${(props) => props.theme.spacing._15};
+  margin: 0 auto;
 `
 
 const RightNav = styled.ul`
@@ -41,7 +45,7 @@ const Header = ({ siteTitle }) => {
       </div>
       <RightNav>
         <RightNavItem>
-          <Link to="/docs">Docs</Link>
+          <Link to="/documentation">Docs</Link>
         </RightNavItem>
         <RightNavItem>
           <Link to="/about">About</Link>

@@ -1,3 +1,5 @@
+import { rem } from 'polished'
+
 export default {
   colors: {
     bg: '#F8F8F8',
@@ -17,6 +19,13 @@ export default {
     heroTitle: '3em',
     heroItem: '1.2em',
   },
+
+  spacing: {
+    _15: rem(15),
+    _24: rem(24),
+  },
+  headerHeight: rem(62),
+
   shadow: {
     codeBlock: '0px 1px 20px rgba(0, 0, 0, 0.1)',
   },
