@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import ArrowForward from '../assets/arrow-forward-outline.svg'
 
 import Prism from 'prismjs'
 
@@ -19,18 +20,20 @@ const Container = styled.div`
 
 const CodeContainer = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 `
 const CodeCard = styled.div`
   box-shadow: ${(props) => props.theme.shadow.codeBlock};
+  width: 100%;
   background: #272822;
   border-radius: 0.3em;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 850px;
-  margin: 10px 15px;
+  margin: 50px 10px 15px;
 `
 
 const CodeTitle = styled.h6`
@@ -49,9 +52,10 @@ const Api = styled.div`
   align-items: center;
   width: 100%;
   justify-content: flex-start;
-  padding: 10px 0px 10px 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid #606060;
   span {
+    word-break: break-all;
     font-weight: 600;
     font-size: 14px;
     color: #d5d5d5;
@@ -71,8 +75,10 @@ const HttpGet = styled.button`
 `
 
 const PreCode = styled.pre`
-  width: 850px;
+  width: 100%;
   margin: 0px !important;
+  word-break: break-all;
+  white-space: break-spaces;
   code {
     white-space: pre-wrap;
     font-size: 14px;
@@ -86,28 +92,29 @@ const HeroTitle = styled.h1`
   font-weight: 900;
   margin-bottom: 1em;
 `
-const HeroContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+const HeroSummary = styled.h5`
+  font-family: ${(props) => props.theme.fonts.secondary};
+  font-size: 18px;
 `
 
-const HeroContentItem = styled.div`
-  font-family: ${(props) => props.theme.fonts.secondary};
-  font-size: ${(props) => props.theme.fontSizes.heroItem};
-  color: ${(props) => props.theme.colors.lightBlack};
-  font-weight: 700;
+const DocsButton = styled.button`
   display: flex;
   align-items: center;
-  margin: 0 15px;
-  &::before {
-    display: inline-block;
-    content: '';
-    background: ${(props) => props.theme.colors.lightGreen};
-    margin-right: 4px;
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
+  border: none;
+  outline: none;
+  background: ${(props) => props.theme.colors.strongBlack};
+  color: ${(props) => props.theme.colors.lightGreen};
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 40px;
+
+  span {
+    margin-right: 10px;
+  }
+
+  svg {
+    fill: #8dee91;
   }
 `
 
@@ -119,22 +126,22 @@ const Home = () => {
     <>
       <Container>
         <HeroTitle>The Anime chan API</HeroTitle>
-        <HeroContent>
-          <HeroContentItem>status: active</HeroContentItem>
-          <HeroContentItem>quotes: 4020</HeroContentItem>
-          <HeroContentItem>stars: 40</HeroContentItem>
-          <HeroContentItem>api: rest</HeroContentItem>
-        </HeroContent>
+        <HeroSummary>Animechan is a rest api serving anime quotes.</HeroSummary>
       </Container>
       <CodeContainer>
+        <DocsButton>
+          <span>Docs</span>
+          <ArrowForward height="20px" />
+        </DocsButton>
+
         <CodeCard>
           <CodeTitle>Get one random anime quote</CodeTitle>
 
           <Api>
             <HttpGet>GET</HttpGet>
-            <pre>
+            <PreCode>
               <span className="language-http">https://animechanapi.xyz/api/quotes/random</span>
-            </pre>
+            </PreCode>
           </Api>
           <PreCode>
             <code className="language-javascript">{response}</code>
