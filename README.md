@@ -1,4 +1,4 @@
-# Anime Chan API Frontend :rocket:
+# Anime Chan API Frontend
 
 > Frontend documentation website for [anime-chan-api][api_repo]
 
