@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import ArrowForward from '../assets/arrow-forward-outline.svg'
 
 import Prism from 'prismjs'
@@ -12,67 +12,79 @@ const response = `
 }
 `
 
-const Container = styled.div`
-  background: ${(props) => props.theme.colors.lightRed};
-  text-align: center;
-  padding: 5em 10px;
-`
+const Container = styled.div(
+  ({ theme }) => css`
+    background: ${theme.colors.lightRed};
+    text-align: center;
+    padding: 5em 10px;
+  `,
+)
 
-const CodeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-`
-const CodeCard = styled.div`
-  box-shadow: ${(props) => props.theme.shadow.codeBlock};
-  width: 100%;
-  background: #272822;
-  border-radius: 0.3em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 850px;
-  margin: 50px 10px 15px;
-`
+const CodeContainer = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  `,
+)
+const CodeCard = styled.div(
+  ({ theme }) => css`
+    box-shadow: ${theme.shadow.codeBlock};
+    width: 100%;
+    background: #272822;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 850px;
+    margin: 50px 10px 15px;
+  `,
+)
 
-const CodeTitle = styled.h6`
-  font-family: ${(props) => props.theme.fonts.secondary};
-  color: ${(props) => props.theme.colors.codeFontTitle};
-  font-size: 18px;
-  width: 100%;
-  text-align: center;
-  margin: 0px;
-  padding: 12px 0px;
-  border-bottom: 1px solid #606060;
-`
+const CodeTitle = styled.h6(
+  ({ theme }) => css`
+    font-family: ${theme.fonts.secondary};
+    color: ${theme.colors.codeFontTitle};
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 12px 0px;
+    border-bottom: 1px solid #606060;
+  `,
+)
 
-const Api = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-start;
-  padding: 10px 20px;
-  border-bottom: 1px solid #606060;
-  span {
-    word-break: break-all;
+const Api = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    border-bottom: 1px solid #606060;
+    span {
+      word-break: break-all;
+      font-weight: 600;
+      font-size: 14px;
+      color: #d5d5d5;
+    }
+  `,
+)
+
+const HttpGet = styled.button(
+  ({ theme }) => css`
+    border: none;
+    outline: none;
+    font-family: ${theme.fonts.primary};
+    background: ${theme.colors.httpGet};
     font-weight: 600;
-    font-size: 14px;
-    color: #d5d5d5;
-  }
-`
-
-const HttpGet = styled.button`
-  border: none;
-  outline: none;
-  font-family: ${(props) => props.theme.fonts.primary};
-  background: ${(props) => props.theme.colors.httpGet};
-  font-weight: 600;
-  margin-right: 20px;
-  color: #ffffff;
-  border-radius: 4px;
-  padding: 5px 10px;
-`
+    margin-right: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 5px 10px;
+  `,
+)
 
 const PreCode = styled.pre`
   width: 100%;
@@ -85,38 +97,44 @@ const PreCode = styled.pre`
   }
 `
 
-const HeroTitle = styled.h1`
-  color: ${(props) => props.theme.colors.strongBlack};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-size: ${(props) => props.theme.fontSizes.heroTitle};
-  font-weight: 900;
-  margin-bottom: 1em;
-`
-const HeroSummary = styled.h5`
-  font-family: ${(props) => props.theme.fonts.secondary};
-  font-size: 18px;
-`
+const HeroTitle = styled.h1(
+  ({ theme }) => css`
+    color: ${theme.colors.strongBlack};
+    font-family: ${theme.fonts.primary};
+    font-size: ${theme.fontSizes.heroTitle};
+    font-weight: 900;
+    margin-bottom: 1em;
+  `,
+)
+const HeroSummary = styled.h5(
+  ({ theme }) => css`
+    font-family: ${theme.fonts.secondary};
+    font-size: 18px;
+  `,
+)
 
-const DocsButton = styled.button`
-  display: flex;
-  align-items: center;
-  border: none;
-  outline: none;
-  background: ${(props) => props.theme.colors.strongBlack};
-  color: ${(props) => props.theme.colors.lightGreen};
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 40px;
+const DocsButton = styled.button(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: ${theme.colors.strongBlack};
+    color: ${theme.colors.lightGreen};
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 40px;
 
-  span {
-    margin-right: 10px;
-  }
+    span {
+      margin-right: 10px;
+    }
 
-  svg {
-    fill: #8dee91;
-  }
-`
+    svg {
+      fill: #8dee91;
+    }
+  `,
+)
 
 const Home = () => {
   useEffect(() => {

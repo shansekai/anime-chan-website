@@ -10,6 +10,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/styles/typography.js',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
@@ -22,6 +28,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/docs/docs-layout.js'),
         },
+        gatsbyRemarkPlugins: [`gatsby-remark-prismjs`],
       },
     },
     {

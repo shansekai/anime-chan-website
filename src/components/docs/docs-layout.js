@@ -1,8 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../layout'
 import Docs from './doc'
+import { prismCSS } from '../../styles/global'
 
 const MDXLayout = ({ children, pageContext: { frontmatter } }) => {
   const seo = {
@@ -11,11 +13,15 @@ const MDXLayout = ({ children, pageContext: { frontmatter } }) => {
     pathname: frontmatter.slug,
   }
 
+  const Template = styled.div`
+    ${prismCSS}
+  `
+
   return (
     <Layout seo={{ ...seo }}>
-      <div>
+      <Template>
         <Docs>{children}</Docs>
-      </div>
+      </Template>
     </Layout>
   )
 }

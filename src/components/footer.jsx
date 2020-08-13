@@ -1,42 +1,50 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import GithubIcon from '../assets/github-brands.svg'
 import TwitterIcon from '../assets/twitter-brands.svg'
 import HeartIcon from '../assets/hand-holding-heart.svg'
 import CodeIcon from '../assets/code-outline.svg'
 
-const Container = styled.footer`
-  margin-top: 50px;
-  font-family: ${(props) => props.theme.fonts.secondary};
-  color: ${(props) => props.theme.colors.lightBlack};
-`
-const Social = styled.ul`
-  display: flex;
-  justify-content: center;
-  list-style: none;
-`
-const SocialItem = styled.li`
-  margin: 0 16px;
+const Container = styled.footer(
+  ({ theme }) => css`
+    margin-top: 50px;
+    font-family: ${theme.fonts.secondary};
+    color: ${theme.colors.lightBlack};
+  `,
+)
+const Social = styled.ul(
+  ({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  `,
+)
+const SocialItem = styled.li(
+  ({ theme }) => css`
+    margin: 0 16px;
 
-  svg {
-    color: ${(props) => props.theme.colors.lightBlack};
-    height: 15px;
-  }
-`
+    svg {
+      color: ${theme.colors.lightBlack};
+      height: 15px;
+    }
+  `,
+)
 
-const CopyRight = styled.div`
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  span,
-  a {
-    font-weight: 700;
-  }
-  a {
-    color: ${(props) => props.theme.colors.lightRed};
-  }
-`
+const CopyRight = styled.div(
+  ({ theme }) => css`
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span,
+    a {
+      font-weight: 700;
+    }
+    a {
+      color: ${theme.colors.lightRed};
+    }
+  `,
+)
 const Footer = () => {
   return (
     <Container>

@@ -1,16 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Container = styled.div`
-  position: sticky;
-  top: ${(props) => props.theme.headerHeight}px;
-  padding: ${(props) => props.theme.spacing._24}px;
-  min-width: 260px;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-  padding: 1.5rem;
-`
+const Container = styled.div(
+  ({ theme }) => css`
+    position: sticky;
+    top: ${theme.headerHeight};
+    padding: ${theme.spacing._24};
+    min-width: 260px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 1.5rem;
+  `,
+)
 
 const SideBar = () => {
   const { mdx } = useStaticQuery(query)

@@ -15,6 +15,7 @@ export default {
     primary: 'Montserrat',
     secondary: 'Istok Web',
   },
+
   fontSizes: {
     heroTitle: '3em',
     heroItem: '1.2em',
@@ -22,6 +23,7 @@ export default {
 
   spacing: {
     _15: rem(15),
+    _18: rem(18),
     _24: rem(24),
   },
   headerHeight: rem(62),
