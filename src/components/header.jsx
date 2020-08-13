@@ -39,13 +39,13 @@ const Header = ({ siteTitle }) => {
   return (
     <Container>
       <div>
-        <a href="https://www.github.com/rocktimsaikia/anime-chan" target="_blank" rel="noopener noreferrer">
+        <Link to="/">
           <GithubIcon height="28px" />
-        </a>
+        </Link>
       </div>
       <RightNav>
         <RightNavItem>
-          <Link to="/documentation">Docs</Link>
+          <Link to="/documentation/">Docs</Link>
         </RightNavItem>
         <RightNavItem>
           <Link to="/about">About</Link>
