@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle(
       text-decoration: none;
       color: inherit;
     }
+    ul {
+      margin: 0px;
+      list-style: none;
+    }
     body,
     html {
       height: 100%;
@@ -35,6 +39,7 @@ export const prismCSS = css`
   code {
     font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
     line-height: 1.4rem;
+    font-size: 0.85rem;
   }
   code[class*='language-'],
   pre[class*='language-'] {

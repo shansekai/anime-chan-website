@@ -6,6 +6,10 @@ import GithubIcon from '../assets/github-outline.svg'
 
 const Container = styled.header(
   ({ theme }) => css`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
     background: ${theme.colors.lightRed};
     display: flex;
     justify-content: space-between;

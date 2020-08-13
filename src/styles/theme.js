@@ -26,7 +26,7 @@ export default {
     _18: rem(18),
     _24: rem(24),
   },
-  headerHeight: rem(62),
+  headerHeight: '70px',
 
   shadow: {
     codeBlock: '0px 1px 20px rgba(0, 0, 0, 0.1)',

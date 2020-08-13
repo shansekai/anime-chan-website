@@ -2,15 +2,16 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Container = styled.div(
+const Container = styled.aside(
   ({ theme }) => css`
-    position: sticky;
-    top: ${theme.headerHeight};
-    padding: ${theme.spacing._24};
-    min-width: 260px;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    padding: 1.5rem;
+    display: block;
+    nav {
+      position: sticky;
+      top: ${theme.headerHeight};
+      padding: ${theme.spacing._24};
+      min-width: 260px;
+      overflow-y: auto;
+    }
   `,
 )
 
@@ -18,7 +19,7 @@ const SideBar = () => {
   const { mdx } = useStaticQuery(query)
 
   return (
-    <Container id="side-nav">
+    <Container>
       <nav>
         <ul>
           {mdx.tableOfContents.items.map((item) => (

@@ -44,7 +44,6 @@ const CodeCard = styled.div(
 
 const CodeTitle = styled.h6(
   ({ theme }) => css`
-    font-family: ${theme.fonts.secondary};
     color: ${theme.colors.codeFontTitle};
     font-size: 18px;
     width: 100%;
@@ -91,6 +90,7 @@ const PreCode = styled.pre`
   margin: 0px !important;
   word-break: break-all;
   white-space: break-spaces;
+  padding-top: 0px !important;
   code {
     white-space: pre-wrap;
     font-size: 14px;
@@ -100,15 +100,12 @@ const PreCode = styled.pre`
 const HeroTitle = styled.h1(
   ({ theme }) => css`
     color: ${theme.colors.strongBlack};
-    font-family: ${theme.fonts.primary};
-    font-size: ${theme.fontSizes.heroTitle};
     font-weight: 900;
     margin-bottom: 1em;
   `,
 )
 const HeroSummary = styled.h5(
   ({ theme }) => css`
-    font-family: ${theme.fonts.secondary};
     font-size: 18px;
   `,
 )

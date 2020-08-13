@@ -7,7 +7,7 @@ import CodeIcon from '../assets/code-outline.svg'
 
 const Container = styled.footer(
   ({ theme }) => css`
-    margin-top: 50px;
+    height: ${theme.headerHeight};
     font-family: ${theme.fonts.secondary};
     color: ${theme.colors.lightBlack};
   `,

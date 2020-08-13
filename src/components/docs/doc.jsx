@@ -6,7 +6,7 @@ import Sidebar from './sideBar'
 const Wrapper = styled.div(
   ({ theme }) => css`
     display: flex;
-    margin-top: ${theme.headerHeight - 2}px;
+    margin-top: 70px;
 
     article {
       max-width: 960px;
@@ -17,7 +17,11 @@ const Wrapper = styled.div(
   `,
 )
 
-const Content = styled.div(({ theme }) => css``)
+const Content = styled.div(
+  ({ theme }) => css`
+    width: 100%;
+  `,
+)
 
 const Docs = ({ children }) => {
   return (
