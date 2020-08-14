@@ -7,10 +7,19 @@ const Container = styled.aside(
     display: block;
     nav {
       position: sticky;
-      top: ${theme.headerHeight};
+      top: 80px;
       padding: ${theme.spacing._24};
       min-width: 260px;
       overflow-y: auto;
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 17px;
+        font-weight: 500;
+      }
     }
   `,
 )

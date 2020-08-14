@@ -5,9 +5,9 @@ github: /documentation.mdx
 description: This documentation will help you get familiar with the resources of the Rick and Morty API and show you how to make different queries.
 ---
 
-### REST
+### Introduction
 
-**Base url:** https://animechanapi.com/api/
+**Base url:** https://animechanapi.xyz/api/
 
 The base url contains information about all available API's resources.
 All requests are `GET` requests and go over `https`. All responses will return data in `json`.
@@ -15,34 +15,144 @@ All requests are `GET` requests and go over `https`. All responses will return d
 _Sample request_
 
 ```
-https://animechanapi.com/api/
+https://animechanapi.xyz/api/
 ```
 
 ```json
 {
-  "characters": "https://animechanapi.com/api/character",
-  "locations": "https://animechanapi.com/api/location",
-  "episodes": "https://animechanapi.com/api/episode"
+  "quotes": "https://animechanapi.xyz/api/quotes",
+  "random": "https://animechanapi.xyz/api/quotes/random",
+  "by_anime": "https://animechanapi.xyz/api/quotes?anime=naruto",
+  "by_character": "https://animechanapi.xyz/api/quotes?char=madara uchiha"
 }
 ```
 
-### Grapql
+### Quotes
 
-**Base url:** https://animechanapi.com/api/
-
-The base url contains information about all available API's resources.
-All requests are `GET` requests and go over `https`. All responses will return data in `json`.
-
-_Sample request_
+Returns 10 quotes by default. Pagination is implemented. To retreeve the next set of 10 quotes add `/?page=2`
 
 ```
-https://animechanapi.com/api/
+https://animechanapi.xyz/api/quotes
 ```
 
 ```json
 {
-  "characters": "https://animechanapi.com/api/character",
-  "locations": "https://animechanapi.com/api/location",
-  "episodes": "https://animechanapi.com/api/episode"
+  "status": "ok",
+  "statusCode": 200,
+  "data": {
+    "quote": "People, who can’t throw something important away, can never hope to change anything.",
+    "character": "Armin Arlert",
+    "anime": "Shingeki no Kyojin"
+  }
+}
+```
+
+### Random
+
+Returns one single random quote.
+
+```
+https://animechanapi.xyz/api/quotes/random
+```
+
+```json
+{
+  "status": "ok",
+  "statusCode": 200,
+  "data": {
+    "quote": "People, who can’t throw something important away, can never hope to change anything.",
+    "character": "Armin Arlert",
+    "anime": "Shingeki no Kyojin"
+  }
+}
+```
+
+### Get quotes by anime
+
+Query quotes by an anime character name . (Uses Pagination)
+
+> Not case-sensitive
+
+```
+https://animechanapi.xyz/api/quotes?anime=naruto
+```
+
+```json
+{
+  "status": "ok",
+  "statusCode": 200,
+  "data": [
+    {
+      "quote": "Hard work is worthless for those that don't believe in themselves.",
+      "character": "Naruto Uzumaki",
+      "anime": "Naruto"
+    },
+    {
+      "quote": "Leaf Village Secret-Finger Justu...1,000 Years of Death!!! *sticks his fingers up Naruto's ass*",
+      "character": "Hatake Kakashi",
+      "anime": "Naruto"
+    },
+    {
+      "quote": "The ones who aren't able to acknowledge their own selves are bound to fail.",
+      "character": "Itachi Uchiha",
+      "anime": "Naruto"
+    },
+    {
+      "quote": "When you give up, your dreams and everything else, they're gone.",
+      "character": "Naruto Uzumaki",
+      "anime": "Naruto"
+    },
+    {
+      "quote": "Now there's something I understand a little better. Hate, sadness, even joy. To be able to share it with another person... Naruto Uzumaki. From fighting him I learned that. He knew pain like I did and then he taught me that you can change your path. I wish that one day I can be needed by someone. Not as a frightening weapon... But as the sand's Kazekage.",
+      "character": "Gaara",
+      "anime": "Naruto"
+    }
+    // ...
+  ]
+}
+```
+
+### Get quotes by character
+
+Query quotes by an anime character name . (Uses Pagination)
+
+> Not case-sensitive
+
+```
+https://animechanapi.xyz/api/quotes?char=madara uchiha
+```
+
+```json
+{
+  "status": "ok",
+  "statusCode": 200,
+  "data": [
+    {
+      "quote": "The longer you live... The more you realize that reality is just made of pain, suffering and emptiness...",
+      "character": "Madara Uchiha",
+      "anime": "Naruto Shippūden"
+    },
+    {
+      "quote": "Talking about peace whilst spilling blood, it's something that only humans can do.",
+      "character": "Madara Uchiha",
+      "anime": "Naruto"
+    },
+    {
+      "quote": "It seems that you still want to dance but... You will not be able to make steps anymore.",
+      "character": "Madara Uchiha",
+      "anime": "Naruto Shippūden"
+    },
+    {
+      "quote": "People cannot show each other their true feelings. Fear, suspicion, and resentment never subside.",
+      "character": "Madara Uchiha",
+      "anime": "Naruto Shippuuden"
+    },
+    {
+      "quote": "Love is not necessary, power is the only true necessity.",
+      "character": "Madara Uchiha",
+      "anime": "Naruto Shippūden"
+    }
+    // ...
+  ]
 }
 ```
