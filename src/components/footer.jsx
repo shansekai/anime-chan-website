@@ -8,6 +8,7 @@ import CodeIcon from '../assets/code-outline.svg'
 const Container = styled.footer(
   ({ theme }) => css`
     height: ${theme.headerHeight};
+    margin-top: 50px;
     font-family: ${theme.fonts.secondary};
     color: ${theme.colors.lightBlack};
   `,
@@ -50,13 +51,19 @@ const Footer = () => {
     <Container>
       <Social>
         <SocialItem>
-          <GithubIcon />
+          <a href="https://github.com/rockimsaikia/anime-chan-website" target="_blank" rel="noopener noreferrer">
+            <GithubIcon />
+          </a>
         </SocialItem>
         <SocialItem>
-          <TwitterIcon />
+          <a href="https://twitter.com/RocktimSaikia10/" target="_blank" rel="noopener noreferrer">
+            <TwitterIcon />
+          </a>
         </SocialItem>
         <SocialItem>
-          <HeartIcon />
+          <a href="https://buymeacoffee.com/7BdaxfI" target="_blank" rel="noopener noreferrer">
+            <HeartIcon />
+          </a>
         </SocialItem>
       </Social>
       <CopyRight>

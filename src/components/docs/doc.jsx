@@ -19,7 +19,8 @@ const Wrapper = styled.div(
 
 const Content = styled.div(
   ({ theme }) => css`
-    width: 100%;
+    overflow: hidden;
+    flex-grow: 1;
   `,
 )
 

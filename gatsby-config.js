@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -28,7 +29,16 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/docs/docs-layout.js'),
         },
-        gatsbyRemarkPlugins: [`gatsby-remark-prismjs`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+            },
+          },
+          `gatsby-remark-external-links`,
+          `gatsby-remark-prismjs`,
+        ],
       },
     },
     {
