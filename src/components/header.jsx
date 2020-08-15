@@ -10,13 +10,17 @@ const Container = styled.header(
     top: 0;
     width: 100%;
     z-index: 2;
-    background: ${theme.colors.lightRed};
+    background: ${theme.colors.bg};
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: ${theme.headerHeight};
     padding: 0 ${theme.spacing._15};
     margin: 0 auto;
+
+    a {
+      text-decoration: none;
+    }
   `,
 )
 
@@ -57,9 +61,6 @@ const Header = ({ siteTitle }) => {
         </RightNavItem>
         <RightNavItem>
           <Link to="/about">About</Link>
-        </RightNavItem>
-        <RightNavItem to="/support">
-          <Link>Support</Link>
         </RightNavItem>
       </RightNav>
     </Container>

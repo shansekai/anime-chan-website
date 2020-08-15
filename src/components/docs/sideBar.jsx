@@ -14,11 +14,17 @@ const Container = styled.aside(
 
       li {
         margin-bottom: 10px;
+        background: #ff9e9e;
+        padding: 10px;
+        border-radius: 2px;
+        color: #171717;
       }
 
       a {
         font-size: 17px;
         font-weight: 500;
+        text-decoration: none !important;
+        color: inherit;
       }
     }
   `,

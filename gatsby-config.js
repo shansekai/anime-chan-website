@@ -1,3 +1,5 @@
+const emoji = require('remark-emoji')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -27,8 +29,9 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/docs/docs-layout.js'),
+          default: require.resolve('./src/template/mdx-template.js'),
         },
+        remarkPlugins: [emoji],
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-autolink-headers',

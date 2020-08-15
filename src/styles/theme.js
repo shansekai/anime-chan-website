@@ -2,7 +2,7 @@ import { rem } from 'polished'
 
 export default {
   colors: {
-    bg: '#F8F8F8',
+    bg: '#f3f3f3',
     lightRed: '#f78484',
     codeFontTitle: '#919191',
     httpGet: '#18D689',

@@ -23,6 +23,7 @@
     "gatsby-plugin-typography": "2.5.10",
     "gatsby-plugin-webfonts": "1.1.3",
     "gatsby-remark-autolink-headers": "2.3.11",
+    "gatsby-remark-emojis": "0.4.3",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "3.5.10",
     "gatsby-source-filesystem": "^2.3.23",
@@ -34,6 +35,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-typography": "0.16.19",
+    "remark-emoji": "2.1.0",
     "styled-components": "5.1.1",
     "typography": "0.16.19",
     "typography-theme-github": "0.16.19"

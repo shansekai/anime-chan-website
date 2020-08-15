@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import ArrowForward from '../assets/arrow-forward-outline.svg'
+import { Link } from 'gatsby'
 
 import Prism from 'prismjs'
 
@@ -14,9 +15,8 @@ const response = `
 
 const Container = styled.div(
   ({ theme }) => css`
-    background: ${theme.colors.lightRed};
     text-align: center;
-    padding: 5em 10px;
+    padding: 4em 10px;
   `,
 )
 
@@ -25,7 +25,6 @@ const CodeContainer = styled.div(
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
   `,
 )
 const CodeCard = styled.div(
@@ -123,8 +122,9 @@ const DocsButton = styled.button(
     font-weight: 700;
     padding: 10px 40px;
 
-    span {
+    a {
       margin-right: 10px;
+      text-decoration: none;
     }
 
     svg {
@@ -145,7 +145,7 @@ const Home = () => {
       </Container>
       <CodeContainer>
         <DocsButton>
-          <span>Docs</span>
+          <Link to="/documentation">Docs</Link>
           <ArrowForward height="20px" />
         </DocsButton>
 
