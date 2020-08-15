@@ -13,18 +13,18 @@ const Container = styled.aside(
       overflow-y: auto;
 
       li {
+      }
+
+      a {
+        display: block;
+        font-size: 17px;
+        font-weight: 500;
         margin-bottom: 10px;
         background: #ff9e9e;
         padding: 10px;
         border-radius: 2px;
         color: #171717;
-      }
-
-      a {
-        font-size: 17px;
-        font-weight: 500;
         text-decoration: none !important;
-        color: inherit;
       }
     }
   `,
@@ -40,6 +40,10 @@ const SideBar = () => {
           {mdx.tableOfContents.items.map((item) => (
             <li>
               <a href={item.url}>{item.title}</a>
+
+              {item.items.map((item) => (
+                <a href={item.url}>{item.title}</a>
+              ))}
             </li>
           ))}
         </ul>
