@@ -1,7 +1,9 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
 
-// You can delete this file if you're not using it
+  createRedirect({
+    fromPath: '/api/*',
+    toPath: 'https://anime-chan.herokuapp.com/:splat',
+    statusCode: 200,
+  })
+}
