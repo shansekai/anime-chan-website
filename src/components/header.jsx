@@ -1,8 +1,8 @@
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import GithubIcon from '../assets/github-outline.svg'
+import Image from 'gatsby-image'
 
 const Container = styled.header(
   ({ theme }) => css`
@@ -17,6 +17,10 @@ const Container = styled.header(
     height: ${theme.headerHeight};
     padding: 0 ${theme.spacing._15};
     margin: 0 auto;
+
+    img {
+      border-radius: 50%;
+    }
 
     a {
       text-decoration: none;
@@ -47,14 +51,13 @@ const RightNavItem = styled.li(
     }
   `,
 )
-const Header = ({ siteTitle }) => {
+const Header = () => {
+  const data = useStaticQuery(query)
   return (
     <Container>
-      <div>
-        <Link to="/">
-          <GithubIcon height="28px" />
-        </Link>
-      </div>
+      <Link to="/">
+        <Image fixed={data.file.childImageSharp.fixed} />
+      </Link>
       <RightNav>
         <RightNavItem>
           <Link to="/documentation/">Docs</Link>
@@ -66,6 +69,18 @@ const Header = ({ siteTitle }) => {
     </Container>
   )
 }
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "animechan.png" }) {
+      childImageSharp {
+        fixed(height: 40) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

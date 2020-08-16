@@ -5,6 +5,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 const Container = styled.aside(
   ({ theme }) => css`
     display: block;
+    @media (max-width: 800px) {
+      display: none;
+    }
     nav {
       position: sticky;
       top: 80px;

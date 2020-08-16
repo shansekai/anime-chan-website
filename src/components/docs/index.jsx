@@ -8,6 +8,10 @@ const Wrapper = styled.div(
     display: flex;
     margin-top: 70px;
 
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
     article {
       max-width: 960px;
       min-height: 50vh;

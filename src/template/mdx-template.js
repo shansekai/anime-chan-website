@@ -23,9 +23,10 @@ const MDXLayout = ({ children, pageContext: { frontmatter } }) => {
 
   const AboutWrapper = styled.article(
     ({ theme }) => css`
-      display: block;
-      width: 960px;
-      margin: 120px auto 0px auto;
+      max-width: 960px;
+      min-height: 50vh;
+      padding: 0px 1.5rem;
+      margin: 130px auto 60px;
     `,
   )
 

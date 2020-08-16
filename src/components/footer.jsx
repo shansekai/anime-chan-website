@@ -7,10 +7,12 @@ import CodeIcon from '../assets/code-outline.svg'
 
 const Container = styled.footer(
   ({ theme }) => css`
-    height: ${theme.headerHeight};
+    background: #202c3c;
+    height: 80px;
     margin-top: 50px;
     font-family: ${theme.fonts.secondary};
-    color: ${theme.colors.lightBlack};
+    color: #c2c7cd;
+    padding: 10px 0px;
   `,
 )
 const Social = styled.ul(
@@ -25,7 +27,7 @@ const SocialItem = styled.li(
     margin: 0 16px;
 
     svg {
-      color: ${theme.colors.lightBlack};
+      color: #c2c7cd;
       height: 15px;
     }
   `,
@@ -37,6 +39,9 @@ const CopyRight = styled.div(
     display: flex;
     align-items: center;
     justify-content: center;
+    svg {
+      fill: #c2c7cd;
+    }
     span,
     a {
       font-weight: 700;

@@ -23,6 +23,7 @@ const Container = styled.div(
 const CodeContainer = styled.div(
   ({ theme }) => css`
     display: flex;
+    padding: 0 20px;
     flex-direction: column;
     align-items: center;
   `,
