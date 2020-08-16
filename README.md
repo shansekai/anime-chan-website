@@ -2,7 +2,7 @@
 
 > Frontend documentation website for [anime-chan-api][api_repo]
 
-## :cloud: Local Set up :
+### Set up 
 
 ```bash
 git clone https://github.com/RocktimSaikia/anime-chan-website.git
@@ -16,13 +16,13 @@ yarn start
 
 > You can use `npm` too but yarn is recommended
 
-## :star: Contribution
+### Contribution
 
 All sort of contributions are welcome. Just [create a issue][repo] before working on something.
 
 Happy coding :tada:
 
-## :page_facing_up: License
+### License
 
 [MIT][license] © [Rocktimsaikia][profile] 2020
 
