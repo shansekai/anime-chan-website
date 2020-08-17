@@ -3,7 +3,7 @@ exports.createPages = ({ actions }) => {
 
   createRedirect({
     fromPath: '/api/*',
-    toPath: `https://anime-chan.herokuapp.com/:splat`,
+    toPath: `https://anime-chan.herokuapp.com/api/:splat`,
     statusCode: 200,
   })
 }
