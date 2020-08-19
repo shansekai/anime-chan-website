@@ -1,88 +1,86 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-
-function SEO({ description, lang, meta, title }) {
+function SEO({ title, description, image, pathname, lang }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+            shortTitle
             description
-            author
+            siteUrl
+            image
+            userTwitter
+            nav {
+              title
+              path
+            }
+            github {
+              site
+              api
+            }
+            author {
+              name
+              site
+            }
           }
         }
       }
-    `
+    `,
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || site.siteMetadata.title,
+    description: description || site.siteMetadata.description,
+    image: `${site.siteMetadata.siteUrl}${image ? image : site.siteMetadata.image}`,
+    url: `${site.siteMetadata.siteUrl}${pathname || '/'}`,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Helmet htmlAttributes={{ lang }} title={seo.title}>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+
+      <meta property="og:locale" content={{ lang }} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={seo.title} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1280" />
+      <meta property="og:image:height" content="720" />
+
+      <meta name="twitter:creator" content={site.siteMetadata.userTwitter} />
+      <meta name="twitter:site" content={site.siteMetadata.userTwitter} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+    </Helmet>
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+  title: null,
+  description: null,
+  image: null,
+  pathname: null,
+  lang: 'en',
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  pathname: PropTypes.string,
+  en: PropTypes.string,
 }
 
 export default SEO
